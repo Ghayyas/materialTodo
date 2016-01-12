@@ -1,0 +1,76 @@
+
+.Today{
+    color: #8693A1;
+    font-size: 25px;
+}
+.float{
+    float: left;
+
+}
+
+.mariginPadding{
+    margin-top: -8.5%;
+    margin-left: 1%;
+    color: #3D4750;
+    font-size: 20px;
+    /*font-weight: bolder;*/
+}
+.mariginPadding1{
+    margin-top: -0.5%;
+    color: #3D4750;
+    margin-left: 7%;
+    font-size: 20px;
+  /*  font-weight: bolder;*/
+}
+
+
+.upper{
+    margin-top:  -49%;
+    margin-left: 2%;
+    margin-bottom: -62%;
+    background-color: white;
+}
+
+.mainCard {
+    width: auto;
+    height: auto;
+    background-color: #1D224B;
+}
+.iconEffects {
+    fill: #A5AEF0;
+    color: #A5AEF0;
+    font-size: 15px;
+}
+
+.back-image{
+    background-image: url("../img/dash.png");
+    height: auto;
+    width: auto;
+    background-size: 255px 93px;
+}
+.dash-color{
+    color: white;
+}
+.index-layout{
+    margin-top:  -12%;
+    margin-left: 2%;
+    margin-bottom: -6%;
+    color: white;
+
+}
+.tab-layout{
+    margin-top: -20%;
+    color: white;
+
+}
+.halfDiv{
+    background-color:#4DC2FF;
+
+}
+.halfDiv1{
+    background-color: #FF7FE5;
+
+}
+ .md-button.md-fab {
+    background-color: white;
+}
