@@ -1,0 +1,18 @@
+<md-dialog aria-label="Input Your Task">
+<md-content layout-padding>
+    <md-input-container class="md-block">
+
+        <label>Enter Your Task</label>
+
+        <input required ng-model="user.todo">
+
+    </md-input-container>
+
+    <md-button ng-click="answer('not useful')">
+        Cancel
+    </md-button>
+    <md-button ng-click="add()" style="margin-right:20px;">
+        Add
+    </md-button>
+</md-content>
+</md-dialog>

@@ -1,0 +1,8 @@
+{
+  "firebase": "andoridmaterial",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*"
+  ]
+}

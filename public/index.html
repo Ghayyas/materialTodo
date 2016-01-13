@@ -7,7 +7,7 @@
     <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <link href="./node_modules/angular-material-icons/angular-material-icons.css">
     <script src="./node_modules/angular/angular.js">
@@ -16,7 +16,13 @@
     <script src="./node_modules/angular-animate/angular-animate.js"></script>
     <script src="./node_modules/angular-material-icons/angular-material-icons.js"></script>
     <script src="./node_modules/angular-aria/angular-aria.js"></script>
-    <script src="js/script.js"></script>
+    <script src="./node_modules/angularfire/dist/angularfire.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/materialController.js"></script>
+    <script src="./js/dialogCtrl.js"></script>
+    <script src="./js/service.js"></script>
     <script src="./node_modules/material-avatar/material-avatar.min.js"></script>
 
 </head>
@@ -35,13 +41,13 @@
 
     <md-list>
     <md-list-item>
-        <img class="md-avatar"  ng-src="{{image}}" style="height:60px; width:60px;" />
+        <img class="md-avatar align-avatar"  ng-src="{{image}}"  />
             <div layout="column" layout-align="start center">
                 <div class=".md-display-1" layout="column">
 
             <div>Jennifer Wilson</div>
 
-            <div style="color:#81D4FA">UI/UX Designer</div>
+            <div class="UX">UI/UX Designer</div>
                 </div>
                 </div>
 
@@ -51,23 +57,23 @@
 
     </md-toolbar>
 
-<div layout="row">
+<div layout="row" ng-controller="DialogController">
 
-<md-toolbar class="md-tall" flex="50">
+<md-toolbar class="md-tall" flex="50" >
 
     <span class="halfDiv" layout="row" layout-align="center center" flex>
         <span layout="column" layout-padding="10">
-            <span class="Pcolor" layout="row" layout-align="center center">12</span>
-            <span class="Pcolor1">Remaining tasks</span>
+            <span layout="row" layout-align="center center">{{remaining}}</span>
+
+            <span>Remaining tasks</span>
         </span>
     </span>
-
 </md-toolbar>
     <md-toolbar class="md-tall md-active" flex="50">
     <span class="halfDiv1" layout="row" layout-align="center center" flex>
         <span layout="column" layout-padding="10">
-            <span class="Pcolor" layout="row" layout-align="center center">32</span>
-            <span class="Pcolor1">Completed tasks</span>
+            <span  layout="row" layout-align="center center">{{completed}}</span>
+            <span>Completed tasks</span>
         </span>
     </span>
 
@@ -78,36 +84,45 @@
 
 <div layout="column" layout-align="start center" show-xs hide-sm hide-gt-xs	 flex>
 
-    <md-button class="md-fab upper" layout="row">
+    <md-button class="md-fab upper" layout="row" ng-click="showTabDialog($event)">
         <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
     </md-button>
 </div>
 
 <div layout="column" layout-align="start center" hide-xs hide-sm hide-md show-xl flex>
 
-    <md-button class="md-fab index-layout" layout="row">
+    <md-button class="md-fab index-layout" layout="row" ng-click="showTabDialog($event)">
         <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
     </md-button>
 </div>
 
 <div layout="column" layout-align="start center" hide show-sm flex>
 
-    <md-button class="md-fab tab-layout" layout="row">
+    <md-button class="md-fab tab-layout" layout="row" ng-click="showTabDialog($event)">
         <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
     </md-button>
 </div>
-<div layout-margin layout-padding>
+<div layout-margin layout-padding ng-controller="DialogController">
     <span class="Today" layout-margin layout-padding><b layout-margin layout-padding>Today</b></span>
-       <md-list>
 
-        <md-list-item> <img src="img/cutmypic%20(1).png" class="mariginPadding1 float" ><span class="mariginPadding">Finish Landing page concept </span></md-list-item>
-        <md-list-item><img src="img/cutmypic%20(1).png" class="mariginPadding1 float"><span class="mariginPadding">Design app illustration</span></md-list-item>
-        <md-list-item><img src="img/cutmypic%20(1).png" class="mariginPadding1 float"><span class="mariginPadding">Javascript training</span></md-list-item>
-        <md-list-item><img src="img/cutmypic%20(1).png" class="mariginPadding1 float"><span class="mariginPadding">Surprise Party for Matt</span> </md-list-item>
+       <md-list>
+        <md-list-item layout="row" layout-align="start start" ng-repeat="message in msg"> <img src="./img/cutmypic(1).png" class=" "><span class="list-md">{{message.todo}}
+            <span>
+               <md-menu>
+                   <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Open sample menu">
+                       <ng-md-icon md-menu-origin md-svg-icon="call:portable-wifi-off" icon="keyboard_arrow_down"></ng-md-icon>
+                   </md-button>
+                   <md-menu-content>
+                       <md-menu-item><md-button ng-click="msg.$remove(message) && func()">Delete</md-button></md-menu-item>
+                   </md-menu-content>
+               </md-menu>
+        </span>
+
+        </span></md-list-item>
+
        </md-list>
 
 </div>
-
 
 <section layout="row" flex>
 
@@ -115,7 +130,7 @@
        <div class="back-image">
         <md-list>
             <md-list-item>
-                <img class="md-avatar"  ng-src="{{image}}" style="height:60px; width:60px;" />
+                <img class="md-avatar align-avatar"  ng-src="{{image}}" />
                 <div layout="column" layout-align="start center">
                     <div class=".md-display-1" layout="column">
 
@@ -130,14 +145,14 @@
         <md-content class="mainCard" layout-padding>
 
             <div layout="row">
-                <ng-md-icon icon="dashboard" class="iconEffects" size="40"></ng-md-icon>
+                <ng-md-icon icon="dashboard" class="iconEffects"></ng-md-icon>
                 <md-button class="md-headline iconEffects" layout-padding>Dashboard</md-button>
             </div>
 
-            <div class="mainCard1 border">
+            <div>
 
                 <div layout="row" layout-align="start center">
-                    <ng-md-icon icon="logout" class="iconEffects" size="40"></ng-md-icon>
+                    <ng-md-icon icon="logout" class="iconEffects"></ng-md-icon>
                     <md-button class=" md-headline iconEffects">Logout</md-button>
 
                 </div>

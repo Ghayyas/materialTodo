@@ -1,0 +1,29 @@
+{
+  "name": "material",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-material-icons": "^0.6.0",
+    "angularfire": "^1.1.3",
+    "firebase": "^2.3.2",
+    "material-avatar": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ghayyas/materialTodo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ghayyas/materialTodo/issues"
+  },
+  "homepage": "https://github.com/Ghayyas/materialTodo#readme"
+}

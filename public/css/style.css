@@ -8,20 +8,22 @@
 
 }
 
-.mariginPadding{
-    margin-top: -8.5%;
-    margin-left: 1%;
+.align-avatar{
+    height:60px;
+    width:60px;
+}
+.UX{
+    color:#81D4FA;
+}
+
+
+.list-md{
+
     color: #3D4750;
     font-size: 20px;
-    /*font-weight: bolder;*/
+
 }
-.mariginPadding1{
-    margin-top: -0.5%;
-    color: #3D4750;
-    margin-left: 7%;
-    font-size: 20px;
-  /*  font-weight: bolder;*/
-}
+
 
 
 .upper{
