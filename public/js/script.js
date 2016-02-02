@@ -3,7 +3,12 @@
  */
 
 
-var app = angular.module('materialApp',['ngMaterial','ngMdIcons', 'firebase']);
+
+angular.module('materialApp',['ui.router','app.home','ngMaterial','firebase','ngMdIcons','app.dialog','app.service','app.signup','app.signin','angular-img-cropper',"app.img"])
+
+
+
+
 
 
 

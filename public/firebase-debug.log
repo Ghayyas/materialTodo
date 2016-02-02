@@ -1,0 +1,34 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase deploy
+[debug] Platform:     linux
+[debug] Node Version: v5.5.0
+[debug] Time:         Tue Feb 02 2016 16:27:52 GMT+0500 (PKT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/andoridmaterial/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/andoridmaterial/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'andoridmaterial'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/andoridmaterial/uploads/-K9WjL31JJfD5BYZEUO1?token=XXX&fileCount=3052&message= 
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase deploy
+[debug] Platform:     linux
+[debug] Node Version: v5.5.0
+[debug] Time:         Tue Feb 02 2016 16:37:50 GMT+0500 (PKT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/andoridmaterial/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/andoridmaterial/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'andoridmaterial'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/andoridmaterial/uploads/-K9Wlcry3OFqdL4uA6br?token=XXX&fileCount=3052&message= 

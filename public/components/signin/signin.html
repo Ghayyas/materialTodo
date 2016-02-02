@@ -1,0 +1,37 @@
+
+
+
+ <div layout="column" layout-align="center center" style="position: relative; margin-top: 62px;">
+ <md-whiteframe class="md-whiteframe-3dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+         <span>Sign IN</span>
+
+        <span flex></span>
+                <md-button class="material-icons md-36 md-fab" ui-sref="signup">person_add</md-button>
+      </div>
+          <form ng-submit="submit()"> 
+     <md-content layout="column" layout-padding>
+
+      <md-input-container>
+        <label>Enter Your Email</label>
+        <input type="email" ng-model="user.email">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="user.password">
+      </md-input-container>
+
+  </md-content>
+  <div layout="row" layout-align="center center">
+        <md-button type="submit" class="md-primary"> Login
+        </md-button>
+  </div>
+        </form>
+    </md-toolbar>
+
+  </md-whiteframe>
+     
+  
+</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="materialApp" >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,158 +7,44 @@
     <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+ 
+          <!--<link href="./node_modules/angular-img-cropper/dist/angular-img-cropper.css" rel="stylesheet">-->
     <link href="css/style.css" rel="stylesheet">
 
-    <link href="./node_modules/angular-material-icons/angular-material-icons.css">
-    <script src="./node_modules/angular/angular.js">
-    </script>
+    <link href="./node_modules/angular-material-icons/angular-material-icons.css" rel="stylesheet">
+
+
+        <script src="./node_modules/angular/angular.js"></script>
+     
+	
+   <script src="./bower_components/angular-img-cropper/dist/angular-img-cropper.min.js"></script>
+
     <script src="./node_modules/angular-material/angular-material.js"></script>
     <script src="./node_modules/angular-animate/angular-animate.js"></script>
     <script src="./node_modules/angular-material-icons/angular-material-icons.js"></script>
     <script src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <!--<script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>-->
+
+        <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="./node_modules/angularfire/dist/angularfire.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
     <script src="./js/script.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./components/home/home.js"></script>
+    <script src="./components/signin/signin.js"></script>
+    <script src="./components/signup/signup.js"></script>
     <script src="./js/materialController.js"></script>
     <script src="./js/dialogCtrl.js"></script>
+    <script src="./components/image/img-crop.js"></script>
     <script src="./js/service.js"></script>
     <script src="./node_modules/material-avatar/material-avatar.min.js"></script>
 
 </head>
-<body ng-app="materialApp" ng-controller="materialCtrl">
-<md-toolbar md-scroll-shrink>
-    <div layout="column" layout-align="center start">
+<body ng-controller="homeCtrl">
 
-    <md-button ng-click="toggleRight()"
-               ng-hide="isOpenRight()"
-               class="md-primary">
-        <ng-md-icon icon="menu" style="fill:white" size="40"></ng-md-icon>
-    </md-button>
-</div>
+<ui-view></ui-view>
+   
 
-    <div layout="row" layout-align="center start" layout-margin>
-
-    <md-list>
-    <md-list-item>
-        <img class="md-avatar align-avatar"  ng-src="{{image}}"  />
-            <div layout="column" layout-align="start center">
-                <div class=".md-display-1" layout="column">
-
-            <div>Jennifer Wilson</div>
-
-            <div class="UX">UI/UX Designer</div>
-                </div>
-                </div>
-
-    </md-list-item>
-   </md-list>
-        </div>
-
-    </md-toolbar>
-
-<div layout="row" ng-controller="DialogController">
-
-<md-toolbar class="md-tall" flex="50" >
-
-    <span class="halfDiv" layout="row" layout-align="center center" flex>
-        <span layout="column" layout-padding="10">
-            <span layout="row" layout-align="center center">{{remaining}}</span>
-
-            <span>Remaining tasks</span>
-        </span>
-    </span>
-</md-toolbar>
-    <md-toolbar class="md-tall md-active" flex="50">
-    <span class="halfDiv1" layout="row" layout-align="center center" flex>
-        <span layout="column" layout-padding="10">
-            <span  layout="row" layout-align="center center">{{completed}}</span>
-            <span>Completed tasks</span>
-        </span>
-    </span>
-
-    </md-toolbar>
-
-
-    </div>
-
-<div layout="column" layout-align="start center" show-xs hide-sm hide-gt-xs	 flex>
-
-    <md-button class="md-fab upper" layout="row" ng-click="showTabDialog($event)">
-        <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
-    </md-button>
-</div>
-
-<div layout="column" layout-align="start center" hide-xs hide-sm hide-md show-xl flex>
-
-    <md-button class="md-fab index-layout" layout="row" ng-click="showTabDialog($event)">
-        <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
-    </md-button>
-</div>
-
-<div layout="column" layout-align="start center" hide show-sm flex>
-
-    <md-button class="md-fab tab-layout" layout="row" ng-click="showTabDialog($event)">
-        <ng-md-icon icon="add" layout="row" layout-align="center end"></ng-md-icon>
-    </md-button>
-</div>
-<div layout-margin layout-padding ng-controller="DialogController">
-    <span class="Today" layout-margin layout-padding><b layout-margin layout-padding>Today</b></span>
-
-       <md-list>
-        <md-list-item layout="row" layout-align="start start" ng-repeat="message in msg"> <img src="./img/cutmypic(1).png" class=" "><span class="list-md">{{message.todo}}
-            <span>
-               <md-menu>
-                   <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Open sample menu">
-                       <ng-md-icon md-menu-origin md-svg-icon="call:portable-wifi-off" icon="keyboard_arrow_down"></ng-md-icon>
-                   </md-button>
-                   <md-menu-content>
-                       <md-menu-item><md-button ng-click="msg.$remove(message) && func()">Delete</md-button></md-menu-item>
-                   </md-menu-content>
-               </md-menu>
-        </span>
-
-        </span></md-list-item>
-
-       </md-list>
-
-</div>
-
-<section layout="row" flex>
-
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2 widthHeight mainCard" md-component-id="right">
-       <div class="back-image">
-        <md-list>
-            <md-list-item>
-                <img class="md-avatar align-avatar"  ng-src="{{image}}" />
-                <div layout="column" layout-align="start center">
-                    <div class=".md-display-1" layout="column">
-
-                        <h3 class="dash-color">Jennifer Wilson</h3>
-
-                    </div>
-                </div>
-
-            </md-list-item>
-        </md-list>
-       </div>
-        <md-content class="mainCard" layout-padding>
-
-            <div layout="row">
-                <ng-md-icon icon="dashboard" class="iconEffects"></ng-md-icon>
-                <md-button class="md-headline iconEffects" layout-padding>Dashboard</md-button>
-            </div>
-
-            <div>
-
-                <div layout="row" layout-align="start center">
-                    <ng-md-icon icon="logout" class="iconEffects"></ng-md-icon>
-                    <md-button class=" md-headline iconEffects">Logout</md-button>
-
-                </div>
-            </div>
-        </md-content>
-    </md-sidenav>
-</section>
 </body>
 </html>

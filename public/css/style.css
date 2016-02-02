@@ -76,3 +76,11 @@
  .md-button.md-fab {
     background-color: white;
 }
+.todoScroll{
+    height: 335px;
+    overflow-y: scroll;
+}
+
+.signUpCard{
+    width: 724px;
+}

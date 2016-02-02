@@ -1,0 +1,12 @@
+
+
+    <div onclick="if(!nextElementSibling.value){nextElementSibling.click()}">
+      <canvas width="auto" height="auto" id="canvas" image-cropper image="cropper.sourceImage" cropped-image="cropper.croppedImage" crop-width="600" crop-height="300" keep-aspect="true" touch-radius="50" crop-area-bounds="bounds"></canvas>
+
+    </div>
+    <input ng-hide="true" type="file" img-cropper-fileread image="cropper.sourceImage" />
+
+    
+    
+        <md-button class="md-raised md-primary" ng-disabled="!cropper.croppedImage" ng-click="saveImg()" >Save</md-button>
+    <md-button class="md-raised md-primary" ng-click="closeDialog()">Cancel</md-button>
